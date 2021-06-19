@@ -2,7 +2,6 @@ POST http://localhost:3000/register
 Content-Type: application/json
 
 {
-    "name": "ffwe",
-    "websiteUrl": "www.google.com",
-    "frequency": "1 minute"
+    "url": "http://google.com",
+   
 }
