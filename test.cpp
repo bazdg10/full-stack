@@ -1,45 +1,42 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
-long long arr[100010];
-long long brr[100010];
-int main()
-{
-  int test_case;
-  cin >> test_case;
-  for(int i = 1; i <= test_case; i++)
-  {
-    int n;
-    long long gift = 0, temp = 0;
-    cin >> n;
-    for(int i = 0; i < n; i++)
-    {
-      cin >> arr[i];
+int pairs(int elementlst[],int n,int z){
+ int count=0;
+  for(int i=0;i<n;i++){
+    int a=elementlst[i];
+    int id1=i;
+    int id2=i;
+    if(i==0){
+      while(elementlst[id2+1]==a)
+         id2+=1;
+      if(elementlst[id2+1]<=a+z && elementlst[id2+1]>=a-z)
+        count+=1;
     }
-    brr[0] = 1;
-    for(int i = 1; i < n; i++)
-    {
-      if(arr[i] > arr[i-1])
-      {
-        brr[i] = brr[i-1] + 1;
-      }
-      else
-      {
-        brr[i] = 1;
-      }
+    else if(i<n-1){
+      while(elementlst[id2+1]==a)
+        id2+=1;
+      while(elementlst[id1-1]==a)
+        id1-=1;
+      if(((elementlst[id1-1]<=a+z) && (elementlst[id1-1]>=a-z)) || ((elementlst[id2+1]<=a+z) && (elementlst[id2+1]>=a-z)))
+        count+=1;
     }
-    gift = brr[n-1];
-    for(int i = n-2; i >= 0; i--)
-    {
-      if(arr[i] > arr[i+1])
-      {
-        temp = brr[i+1] + 1;
-      }
-      else
-        temp = 1;
-      gift = gift + max(temp, brr[i]);
-      brr[i] = temp;
+    else{
+      while(elementlst[id1-1]==a)
+        id1-=1;
+      if(elementlst[id1-1]<=a+z && elementlst[id1-1]>=a-z)
+        count+=1;
     }
-    cout << gift << endl;
   }
-  return 0 ;
+  return count;
+}
+int main() {
+	int n,z;
+	cin>>n>>z;
+	int elementlst[n];
+	for(int i=0;i<n;i++){
+	    cin>>elementlst[i];
+	}
+	sort(elementlst,elementlst+n);
+	cout<<pairs(elementlst,n,z);
+	return 0;
 }

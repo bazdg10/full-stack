@@ -1,31 +1,34 @@
-import java.util.Scanner;
 
-public class Main 
-{	
-	private static void calc ( int x ) {
-    
-    int count = 0;
-    int lsb = -1;
-    int msb = -1;
-    int cur = 0;
-    while(x!=0) {
-    	if (x%2==1) {
-        	count++;
-            msb = cur;
-       		if (lsb==-1) {
-            lsb = cur;
-            }
-        }
-      cur++;
-      x /= 2;
-    }  
-    System.out.print(count + "#" + lsb + "#" + msb );
+class H1 {
+
+    public void method() throws Exception {
+        System.out.println("hackerearth");
     }
+    
 
-    public static void main(String args[])
-    {
-        Scanner sc = new Scanner(System.in);
-       	int n = sc.nextInt();
-      	calc(n);
+}
+
+class H2 extends H1 {
+    //public void run() {
+    //    System.out.println("Hi");
+    //}
+
+    public void method() throws Exception {
+        System.out.println("helloWrld");
     }
 }
+
+public class Main{
+	public static void main(String[] args) {
+        H2 h = new H2();
+        try {
+            h.method();
+        } catch (Exception e) {
+            System.out.println("Hello");
+        } finally {
+            System.out.println("hi");
+        }
+        
+	}
+}
+

@@ -49,6 +49,18 @@ app.post('/add-user', (req, res)=> {
         .catch(err => console.log(err));
     
 });
+app.post('/locn', (req, res) => {
+    if (req.body.search==="All")  res.redirect('/get-all');
+    else{
+    User.find({ location : req.body.search})
+    .then( result => {
+        res.render('userList', { title: 'Search Results', users: result });
+    })  
+    .catch( err => {
+        console.log(err);
+    })
+    }
+});
 
 app.post('/lookup', (req, res) => {
     if (req.body.search==="All")  res.redirect('/get-all');

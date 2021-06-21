@@ -1,10 +1,15 @@
 <nav>
     <h3>Know your Neighbours</h3>
     <form action="/lookup" method="POST">
-        <label for="search"></label>
+        <label for="search"><h3>Search By Name</h3></label>
         <input type="text" name="search" id="search" placeholder="Search users by Name or Location...    " required>
         <br>
         <button type="submit" style="float: right">Go</button>
     </form>
-   
+    <form action="/locn" method="POST">
+        <label for="search"><h3>Search By Location</h3></label>
+        <input type="text" name="search" id="search" placeholder="Search users by Name or Location...    " required>
+        <br>
+        <button type="submit" style="float: right">Go</button>
+    </form>
 </nav>
