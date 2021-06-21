@@ -1,8 +1,12 @@
 const { error } = require('console');
 const express = require('express');
+const cors = require("cors");
+app.use(cors());
 const app = express();
 const mongoose = require('mongoose');
 const User = require('./models/user');
+const PORT = process.env.PORT || 3000;
+
 app.listen(3000);
 app.set('view engine', 'ejs')
 app.use(express.urlencoded({ extended: true }));
