@@ -1,8 +1,0 @@
-POST http://localhost:8080/courses
-Content-Type: application/json
-Authorization: Bearer pjlejw4l23revwlevnnvnv
-{
-  "id": 2,
-   "title": "Electronics",
-   "description": "Hardware and design of Computer"   
- }
