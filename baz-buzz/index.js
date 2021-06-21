@@ -12,7 +12,8 @@ app.use(express.urlencoded({ extended: true }));
     {name: "Arya", location: "Delhi"}
 ]*/
 
-const userURI = 'mongodb+srv://bazdg10:$@cluster0.j1a1t.mongodb.net/BazBuzz?retryWrites=true&w=majority';
+
+const userURI = 'mongodb+srv://bazdg10:test1234@cluster0.j1a1t.mongodb.net/BazBuzz?retryWrites=true&w=majority';
 mongoose.connect(userURI, { useNewUrlParser: true, useUnifiedTopology: true } )
         .then(console.log(`Connected to db`)).catch((err)=> console.log(error));
 
