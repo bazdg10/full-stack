@@ -1,0 +1,29 @@
+<%- include('./partials/head.ejs') %>
+<%- include('./partials/navbar.ejs') %>
+
+
+<div class="add user">
+    <form action="/" method="GET">
+    <button type="submit"style="float: inline-end;">Add</button>
+    </form>
+</div>
+
+<div class="user list">
+<% if (users.length > 0)  {%>    
+    <h2> Users based on your search criteria </h2>
+    
+    <%users.forEach( user => { %>
+        <h5><%= user.name %></h5>
+        <h6><%= user.location %></h6>
+        <hr>
+    <%})%>
+
+<% } else { %>
+    <h4>Sorry! No Users Found!</h4>
+<% } %>     
+</div>
+
+
+<%- include('./partials/footer.ejs') %>
+
+</html>
