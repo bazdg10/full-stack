@@ -1,0 +1,99 @@
+
+table = {
+    ['1', '1', '1', '1'] : [ 25, 25, 25, 25 ]
+    ['2', '2', '2', '2'] : [ -25, -25, -25, -25 ]
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    else if ( j[u1][i]==1 && (j[u2][i]==j[u3][i]==j[u4][i]==2) ) {
+        score[u1] -= 25
+        score[u2] += 25
+        score[u3] += 25
+        score[u4] += 25
+    }
+    else if ( j[u2][i]==1 && (j[u1][i]==j[u3][i]==j[u4][i]==2) ) {
+            score[u1] += 25
+            score[u2] -= 25
+            score[u3] += 25
+            score[u4] += 25
+    }  
+    else if ( j[u3][i]==1 && (j[u2][i]==j[u1][i]==j[u4][i]==2) ) {
+            score[u1] += 25
+            score[u2] += 25
+            score[u3] -= 25
+            score[u4] += 25
+    }
+    else if ( j[u4][i]==1 && (j[u2][i]==j[u3][i]==j[u1][i]==2) ) {
+            score[u1] += 25
+            score[u2] += 25
+            score[u3] += 25
+            score[u4] -= 25
+    }
+    else if ( (j[u1][i]==1 && j[u2][i]==1 ) && ( j[u3][i]==2 && j[u4][i]==2 ) ) {
+        score[u1] -= 12.5;
+        score[u2] -= 12.5;
+        score[u3] += 50;
+        score[u4] += 50;
+    }
+    else if ( (j[u1][i]==1 && j[u3][i]==1 ) && ( j[u2][i]==2 && j[u4][i]==2 ) ) {
+        score[u1] -= 12.5;
+        score[u3] -= 12.5;
+        score[u2] += 50;
+        score[u4] += 50;
+    }
+    else if ( (j[u1][i]==1 && j[u4][i]==1 ) && ( j[u3][i]==2 && j[u2][i]==2 ) ) {
+        score[u1] -= 12.5;
+        score[u4] -= 12.5;
+        score[u3] += 50;
+        score[u2] += 50;
+    }
+    else if ( (j[u3][i]==1 && j[u2][i]==1 ) && ( j[u1][i]==2 && j[u4][i]==2 ) ) {
+        score[u3] -= 12.5;
+        score[u2] -= 12.5;
+        score[u1] += 50;
+        score[u4] += 50;
+    }
+    else if ( (j[u4][i]==1 && j[u2][i]==1 ) && ( j[u3][i]==2 && j[u1][i]==2 ) ) {
+        score[u4] -= 12.5;
+        score[u2] -= 12.5;
+        score[u3] += 50;
+        score[u1] += 50;
+    }
+    else if ( (j[u3][i]==1 && j[u4][i]==1 ) && ( j[u1][i]==2 && j[u2][i]==2 ) ) {
+        score[u4] -= 12.5;
+        score[u3] -= 12.5;
+        score[u1] += 50;
+        score[u2] += 50;
+    }
+    else if ( j[u1][i]==2 && (j[u2][i]==j[u3][i]==j[u4][i]==1) ) {
+        score[u1] += 75
+    }
+    else if ( j[u2][i]==2 && (j[u1][i]==j[u3][i]==j[u4][i]==1) ) {
+        score[u2] += 75
+    }
+    else if ( j[u3][i]==2 && (j[u2][i]==j[u1][i]==j[u4][i]==1) ) {
+        score[u3] += 75
+    }
+    else if ( j[u4][i]==2 && (j[u2][i]==j[u3][i]==j[u1][i]==1) ) {
+        score[u4] += 75
+    }
