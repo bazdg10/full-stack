@@ -1,0 +1,20 @@
+<%- include('./partials/head.ejs') %>
+<%- include('./partials/navbar.ejs') %>
+
+
+<!-- <h3>This is user's view</h3> -->
+<h3> Feel free to go ahead and add your details</h3>
+<div class="add user">
+    <form action="/add-user" method="POST">
+        <label for="name">Name:<br /></label>
+        <input type="text" id="name" name="name" required>
+        <label for="location">Location: </label>
+        <input type="text" id="location" name="location" required>
+        <button>Add</button>
+    </form>
+</div>
+</div>
+    
+<%- include('./partials/footer.ejs') %>
+
+</html>
